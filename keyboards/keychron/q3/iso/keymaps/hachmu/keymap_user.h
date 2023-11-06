@@ -3,8 +3,8 @@
 enum layers {
     BASE,
     FN,
-    BASE2,
-    FN2
+    BASE_2,
+    FN_2
 };
 
 enum my_keycodes {

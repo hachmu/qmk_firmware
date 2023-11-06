@@ -51,7 +51,7 @@ bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
     uint8_t current_layer = get_highest_layer(layer_state|default_layer_state);
     switch(current_layer) {
         case BASE:
-        case BASE2:
+        case BASE_2:
             // rgb_matrix_set_remapped_colors();
 #ifdef RGB_ACCENT_COLOR
             if(host_keyboard_led_state().caps_lock) {
@@ -73,7 +73,7 @@ bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
             }
             break;
         case FN:
-        case FN2:
+        case FN_2:
 #ifdef RGB_ACCENT_COLOR
             rgb_matrix_set_color_by_keycode(led_min, led_max, current_layer, is_not_transparent, RGB_ACCENT_COLOR);
 #endif
