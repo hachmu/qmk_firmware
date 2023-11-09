@@ -111,10 +111,3 @@ compile_commands.json
 # VIA(L) files that don't belong in QMK repo
 via*.json
 /keyboards/**/keymaps/vial/*
-
-# keyboards I don't use
-/keyboards/*
-!keyboards/keychron
-/keyboards/keychron/*
-!/keyboards/keychron/common
-!/keyboards/keychron/q3
