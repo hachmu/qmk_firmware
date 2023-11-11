@@ -65,12 +65,6 @@ bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
                 rgb_matrix_set_color(78, RGB_ACCENT_COLOR); // 78 = Left Windows
             }
 #endif
-            if(user_config_get_lock_active() && user_config_get_lock_searching()) { // wants to lock a key
-                rgb_matrix_set_color_by_keycode(led_min, led_max, current_layer, is_kc_lock_key, RGB_GREEN);
-            } else if(user_config_get_lock_active()) { // locked a key
-                rgb_matrix_set_color_by_keycode(led_min, led_max, current_layer, is_kc_lock_key, RGB_RED);
-                rgb_matrix_set_color_by_keycode(led_min, led_max, current_layer, is_locked_key, RGB_RED);
-            }
             break;
         case FN:
         case FN_2:
@@ -78,6 +72,12 @@ bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
             rgb_matrix_set_color_by_keycode(led_min, led_max, current_layer, is_not_transparent, RGB_ACCENT_COLOR);
 #endif
             break;
+    }
+    if(user_config_get_lock_active() && user_config_get_lock_searching()) { // wants to lock a key
+        rgb_matrix_set_color_by_keycode(led_min, led_max, current_layer, is_kc_lock_key, RGB_GREEN);
+    } else if(user_config_get_lock_active()) { // locked a key
+        rgb_matrix_set_color_by_keycode(led_min, led_max, current_layer, is_kc_lock_key, RGB_RED);
+        rgb_matrix_set_color_by_keycode(led_min, led_max, current_layer, is_locked_key, RGB_RED);
     }
     return false;
 }

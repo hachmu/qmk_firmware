@@ -15,4 +15,3 @@ RGB_MATRIX_ENABLE = yes
 LTO_ENABLE = yes
 EEPROM_DRIVER = wear_leveling
 WEAR_LEVELING_DRIVER = embedded_flash
-
